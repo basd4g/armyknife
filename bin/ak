@@ -1,0 +1,10 @@
+#!/bin/bash
+
+BIN_DIR=$(cd "$(dirname "$0")" ; pwd)
+
+SUB_PATH="$BIN_DIR/sub/$1"
+if [ -f $SUB_PATH ]; then
+  bash $SUB_PATH
+else
+  echo "The subcommand '$1' is not exist"
+fi

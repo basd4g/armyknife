@@ -1,0 +1,7 @@
+#!/bin/bash
+
+SUB_DIR=$(cd "$(dirname "$0")" ; pwd)
+
+find $SUB_DIR -type f | while read SUB_CMD_NAME; do #| xargs basename # | awk '{printf "ak %s", $0}'
+  echo "ak $(basename $SUB_CMD_NAME)"
+done

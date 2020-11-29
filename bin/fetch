@@ -1,0 +1,12 @@
+#!/bin/bash
+
+url=$1
+
+if type "curl" > /dev/null 2>&1 ; then
+  curl -fssl "${url}"
+elif type "wget" > /dev/null 2>&1 ; then
+  wget "${url}" --quiet -o -
+else
+  echo "need curl or wget." 2>&1
+  exit 1
+fi
